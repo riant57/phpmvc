@@ -21,6 +21,9 @@
                     <a class="nav-link" href="<?php echo BASEURL ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo BASEURL ?>/Mahasiswa">Mahasiswa</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo BASEURL ?>/About">About</a>
                 </li>
                 <li class="nav-item">
