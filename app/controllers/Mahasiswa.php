@@ -36,7 +36,7 @@ class Mahasiswa extends Controller{
     {
         //var_dump($_POST);
         if($this->model('Mahasiswa_model')->hapusDataMahasiswa($id) > 0){
-            Flasher::setFlash('berhasil','dihapus','success');
+            Flasher::setFlash('berhasil','dihapus','danger');
             header('Location:' .BASEURL.'/Mahasiswa');
             exit;
         }else{
@@ -62,6 +62,16 @@ class Mahasiswa extends Controller{
             header('Location:' .BASEURL.'/Mahasiswa');
             exit;
         }
+    }
+
+    public function cari()
+    {
+        $data['judul'] = "Daftar Mahasiswa";
+        $data['mhs'] = $this->model('Mahasiswa_model')->cariDataMahasiswa();
+        //print_r($data);exit;
+        $this->view('templates/header', $data);
+        $this->view('mahasiswa/index', $data);
+        $this->view('templates/footer');
     }
 }
 
